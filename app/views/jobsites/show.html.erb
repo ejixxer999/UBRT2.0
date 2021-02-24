@@ -1,2 +1,6 @@
 <h1>Jobsite Info</h1>
-<%= "Name: #{@jobsite.name}, Location: #{@jobsite.location}" %>
+<%= "Name: #{@jobsite.name}" %> 
+<br>
+<%= "Location: #{@jobsite.location}" %>
+
+<%= link_to "Edit Jobsite", edit_jobsite_path(@jobsite)%>
