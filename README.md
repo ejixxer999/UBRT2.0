@@ -1,32 +1,56 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+Add this line to your application's Gemfile:
 
-* Ruby version
+```ruby
+gem 'UBRT2.0'
+```
 
-* System dependencies
+And then execute:
 
-* Configuration
+    $ bundle
 
-* Database creation
+Or install it yourself as:
 
-* Database initialization
+    $ gem install UBRT2.0
 
-* How to run the test suite
+## Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+UBRT2.0 was created for employees who would like to keep updated information on a company and its jobsites. A new user can signup using the webapps data base, or using their google account to sign in. Once signed in the user along with many other users utilizing the app, can add company info, or jobsite info. Once complete the user can view a list of companies and the jobsites specific to that company.
 
-* Deployment instructions
+NOTES*
+Please be sure to run bundle install to ensure all gems are installed.
+Users cannot create or edit a company, or jobsite with an empty field of text.
+User names and passwords are case sensitive please be sure to use proper casing when signing in or signing up.
+All sign up Fields must contain content to create an account.
 
-* ...
-TODO 
 
-1. Make jobsite show page
-2.omniauth google:(https://www.youtube.com/watch?v=TXkAK7jjato&feature=youtu.be)
-3.add destroy
-4.nav bar link
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[ejixxer999]/UBRT2.0. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the UBRT2.0 codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[ejixxer999]/UBRT2.0/blob/master/CODE_OF_CONDUCT.md).
+
+
+
+
+
+
+
 
 
