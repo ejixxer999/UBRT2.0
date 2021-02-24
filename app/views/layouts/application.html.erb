@@ -11,7 +11,12 @@
   </head>
 
   <body>
-    <%# <% if user && user.authenticate(params[:user][:password]) %> 
+   <% if logged_in? %>
+    <nav class="navbar">
+      <%= link_to 'Log Out', logout_path, method: :delete, class: 'navlink' %>
+    </nav>
+    <% end %>
+
 
             
     <%= yield %>
