@@ -26,6 +26,7 @@ class JobsitesController < ApplicationController
     def edit
         if current_user 
             @jobsite = current_user.jobsites.find_by_id(params[:id])
+            
 
         end
 
