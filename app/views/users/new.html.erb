@@ -1,0 +1,13 @@
+<h1>Welcome</h1>
+<%= form_for (@user) do |s| %>
+<%= s.label :username %>
+<%= s.text_field :username %>
+<br>
+<%= s.label :email %>
+<%= s.email_field :email %>
+<br>
+<%= s.label :password %>
+<%= s.password_field :password%>
+<%= s.submit "Signup" %>
+<% end %>
+

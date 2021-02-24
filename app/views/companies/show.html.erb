@@ -1,0 +1,4 @@
+<h1><%= @company.name.upcase %> JOBSITES </h1>
+<% @company.jobsites.each_with_index do |t, index| %>
+<%= "#{index + 1}. #{t.name}" %>
+<% end %>

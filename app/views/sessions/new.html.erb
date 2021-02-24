@@ -1,0 +1,10 @@
+<h1>Welcome Back!</h1>
+<%= form_for :user, url: '/login' do |t| %>
+<%= t.label :username %>
+<%= t.text_field :username %>
+<br>
+<%= t.label :password %>
+<%= t.password_field :password %>
+<br>
+<%= t.submit "LOG IN" %>
+<% end %>

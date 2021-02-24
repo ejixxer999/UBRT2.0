@@ -1,0 +1,4 @@
+<h1>ALL Companies</h1>
+<% @companies.each do |t| %>
+ <%= link_to t.name, company_path(t) %> 
+<% end %>

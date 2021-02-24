@@ -1,0 +1,15 @@
+<h1>Tell us about your Jobsite</h1>
+<%= form_for @jobsite do |t| %>
+<%= t.label :name %>
+<%= t.text_field :name %>
+<br>
+<%= t.label :location %>
+<%= t.text_field :location %>
+<br>
+<%= t.label "Please select your company" %>
+<%= t.collection_select :company_id, Company.all, :id, :name, prompt: true %>
+<%= t.hidden_field :user_id %>
+<%= t.submit "Add Job to DataBase" %>
+<% end %>
+
+<%= link_to "Dont see your company?", new_company_path %>

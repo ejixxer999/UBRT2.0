@@ -1,0 +1,4 @@
+<h1>ALL Jobsites</h1>
+<% @jobsites.each do |t| %>
+<%= link_to t.name, jobsite_path(t) %> 
+<% end %>

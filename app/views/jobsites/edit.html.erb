@@ -1,0 +1,10 @@
+<h1>Edit Jobsite</h1>
+<%= form_for @jobsite do |t| %>
+<% t.hidden_field :user_id %>
+<% t.hidden_field :company_id %>
+<%= t.label :name %>
+<%= t.text_field :name %>
+<%= t.label :location %>
+<%= t.text_field :location %>
+<%= t.submit "Update Jobsite" %>
+<% end %>
