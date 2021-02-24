@@ -23,14 +23,7 @@ class CompaniesController < ApplicationController
         @company = Company.find_by_id(params[:id])
     end 
 
-    def update
-    end 
-
-    def edit
-    end 
-
-    def destroy
-    end 
+    
 
     
 
