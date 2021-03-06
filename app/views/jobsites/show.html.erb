@@ -4,3 +4,4 @@
 <%= "Location: #{@jobsite.location}" %>
 
 <%= link_to "Edit Jobsite", edit_jobsite_path(@jobsite)%>
+<%= link_to "DELETE Jobsite", jobsite_path(@jobsite), method: :delete %>
