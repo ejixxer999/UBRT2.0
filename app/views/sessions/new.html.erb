@@ -1,4 +1,7 @@
 <h1>Welcome Back!</h1>
+
+<%= flash[:error] %>
+
 <%= form_for :user, url: '/login' do |t| %>
 <%= t.label :username %>
 <%= t.text_field :username %>
