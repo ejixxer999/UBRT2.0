@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   resources :companies
 
   resources :users do
-    resources :jobsites, only:[:index, :new, :show]
-    resources :companies, only:[:index, :new, :show]
+    resources :jobsites, only:[:index, :new, :show, :create]
+    resources :companies, only:[:index, :new, :show, :create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
+
+# nested routes 
+# scope method
