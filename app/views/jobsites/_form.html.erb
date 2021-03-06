@@ -1,0 +1,48 @@
+<%= form_for @jobsite do |t| %>
+
+<%= render partial: 'layouts/errors', locals: {object: @jobsite} %>
+
+<%= t.label :name %>
+<%= t.text_field :name %>
+<br>
+<%= t.label :location %>
+<%= t.text_field :location %>
+<br>
+<%= t.label "Please select your company" %>
+<%= t.collection_select :company_id, Company.all, :id, :name, prompt: true %>
+<%= t.hidden_field :user_id %>
+
+<br><br>
+
+<% if !params[:company_id] %>
+    <h4>Or add a new company:</h4>
+
+    <%= t.fields_for :company do |v|%>
+        <%= v.label :name %>
+        <%= v.text_field :name %>
+
+        <%= v.label :location %>
+        <%= v.text_field :location %>
+
+       <%= v.label :num_of_workers %>
+       <%= v.number_field :num_of_workers, min:0 %>
+    <% end %>
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= t.submit "Add Job to DataBase" %>
+<% end %>
+
+<%= link_to "Dont see your company?", new_company_path %>
