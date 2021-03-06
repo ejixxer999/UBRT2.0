@@ -1,17 +1,31 @@
 class JobsitesController < ApplicationController
+
     def new
-        @jobsite = Jobsite.new(user_id: params[:user_id])
-        @companies = Company.all
+        if params[:company_id] && company = Company.find_by_id(params[:company_id])
+            @jobsite = company.jobsites.build
+        else
+            @jobsite = Jobsite.new
+            @jobsite.build_company
+        end
+        # @jobsite = Jobsite.new(user_id: params[:user_id])
+        # @companies = Company.all
     end 
 
     def create
-        @jobsite = Jobsite.new(jobsite_params)
+        @jobsite = current_user.jobsites.build(jobsite_params)
         if @jobsite.save
-            flash[:alert] = "Jobsite saved!"
             redirect_to user_path(@jobsite.user)
         else
+            @jobsite.build_company unless @jobsite.company
             render :new
         end
+        # @jobsite = Jobsite.new(jobsite_params)
+        # if @jobsite.save
+        #     flash[:alert] = "Jobsite saved!"
+        #     redirect_to user_path(@jobsite.user)
+        # else
+        #     render :new
+        # end
     end 
 
     def index
@@ -44,11 +58,23 @@ class JobsitesController < ApplicationController
     end 
 
     def destroy
+        set_jobsite
+        @jobsite.destroy
+        redirect_to user_path
     end
 
 
     private
+
+    def set_jobsite
+        @jobsite = Jobsite.find_by(id: params[:id])
+        if !@jobsite
+            redirect_to user_path
+        end
+    end
+
+    
     def jobsite_params
-        params.require(:jobsite).permit(:name, :location, :user_id, :company_id)
+        params.require(:jobsite).permit(:name, :location, :user_id, :company_id, company_attributes: [:name, :location, :num_of_workers])
     end
 end
