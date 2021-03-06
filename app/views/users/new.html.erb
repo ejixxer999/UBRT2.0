@@ -1,5 +1,8 @@
 <h1>Welcome</h1>
 <%= form_for (@user) do |s| %>
+
+<%= render partial: 'layouts/errors', locals: {object: @user} %>
+
 <%= s.label :username %>
 <%= s.text_field :username %>
 <br>
